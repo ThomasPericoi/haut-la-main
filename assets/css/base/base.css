@@ -1,0 +1,32 @@
+/* #Base
+--------------------------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    margin-top: var(--header-height);
+    animation: fadeIn ease 1000ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+::selection {
+    color: var(--white);
+    background: var(--secondary);
+}
+
+::-moz-selection {
+    color: var(--white);
+    background: var(--secondary);
+}
+
+.sr-only {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}

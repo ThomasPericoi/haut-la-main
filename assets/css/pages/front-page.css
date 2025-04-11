@@ -1,0 +1,12 @@
+/* #Front page
+--------------------------------------------------------------- */
+.home-hero {
+    min-height: 80vh;
+    padding: var(--spacing-section-outer) 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #00000035;
+    background-blend-mode: darken;
+    box-sizing: border-box;
+}
