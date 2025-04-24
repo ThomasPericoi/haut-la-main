@@ -1,12 +1,49 @@
 /* #Front page
 --------------------------------------------------------------- */
+/* Hero */
 .home-hero {
-    min-height: 80vh;
+    min-height: 75vh;
     padding: var(--spacing-section-outer) 0;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #00000035;
     background-blend-mode: darken;
-    box-sizing: border-box;
+
+    &.shadow:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+.home-hero .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-section-inner);
+}
+
+.home-hero .hero-title {
+    color: var(--white);
+}
+
+.home-hero .hero-subtitle {
+    order: -1;
+    font-family: var(--bold);
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+/* Portrait */
+.home-portrait {
+    padding: var(--spacing-section-outer) 0;
 }

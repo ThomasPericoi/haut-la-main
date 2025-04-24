@@ -5,7 +5,7 @@
 // Register blocks
 function register_acf_blocks()
 {
-    $blocks = [];
+    $blocks = ['pdf-viewer'];
 
     foreach ($blocks as $block) {
         register_block_type(__DIR__ . '/blocks/' . $block);

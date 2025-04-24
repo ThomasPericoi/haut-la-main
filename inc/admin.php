@@ -8,7 +8,7 @@ function register_menus()
     register_nav_menus(
         array(
             'header-menu' => __('En-tête', 'haut-la-main'),
-            'footer-menu-1' => __('Pied de page 1', 'haut-la-main'),
+            'footer-menu-1' => __('Pied de page n°1', 'haut-la-main'),
             'footer-submenu' => __('Pied de page inférieur', 'haut-la-main'),
         )
     );

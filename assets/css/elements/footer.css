@@ -1,8 +1,8 @@
 /* #Footer
 --------------------------------------------------------------- */
 #footer {
-    background-color: var(--selago);
     position: relative;
+    font-size: 0.875em;
 }
 
 #footer a:not(.btn) {
@@ -11,8 +11,9 @@
 
 /* Main Footer */
 #main-footer {
-    padding: var(--spacing-section-inner) 0;
+    padding: var(--spacing-section-outer) 0;
     font-family: var(--bold);
+    background-color: var(--secondary-light);
 }
 
 #main-footer>.container {
@@ -37,24 +38,25 @@
     font-weight: 700;
     font-style: italic;
     transition: color ease 250ms;
-}
 
-#main-footer .custom-logo-link:hover {
-    color: var(--primary);
-}
+    &:after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        display: block;
+        background-color: var(--content-color);
+        transform: translateY(-3px);
+        transition: background-color ease 250ms;
+    }
 
-#main-footer .custom-logo-link:after {
-    content: "";
-    width: 100%;
-    height: 3px;
-    display: block;
-    background-color: var(--content-color);
-    transform: translateY(-3px);
-    transition: background-color ease 250ms;
-}
+    &:hover,
+    &:focus {
+        color: var(--primary);
 
-#main-footer .custom-logo-link:hover:after {
-    background-color: var(--primary);
+        &:after {
+            background-color: var(--primary);
+        }
+    }
 }
 
 #main-footer .custom-logo {
@@ -90,45 +92,43 @@
     position: relative;
     color: var(--content-color);
     transition: color ease 250ms;
-}
 
-#main-footer .menu-footer a:hover,
-#main-footer .menu-footer a:focus {
-    color: var(--primary);
-}
+    &:before {
+        content: "";
+        width: 100%;
+        height: 2px;
+        display: block;
+        position: absolute;
+        bottom: -4px;
+        background-color: var(--black);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform ease 250ms, background-color ease 250ms;
+    }
 
-#main-footer .menu-footer a:before {
-    content: "";
-    width: 100%;
-    height: 2px;
-    display: block;
-    position: absolute;
-    bottom: -4px;
-    background-color: var(--black);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform ease 250ms, background-color ease 250ms;
-}
+    &:hover,
+    &:focus {
+        color: var(--primary);
 
-@media screen and (min-width: 1200px) {
-    #main-footer .menu-footer a:before {
-        left: 50%;
-        transform: translateX(-50%) scaleX(0);
+        &:before {
+            background-color: var(--primary);
+            transform: scaleX(1);
+            transform-origin: left;
+        }
     }
 }
 
-#main-footer .menu-footer a:hover:before,
-#main-footer .menu-footer a:focus:before {
-    background-color: var(--primary);
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
 @media screen and (min-width: 1200px) {
+    #main-footer .menu-footer a {
+        &:before {
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+        }
 
-    #main-footer .menu-footer a:hover:before,
-    #main-footer .menu-footer a:focus:before {
-        transform: translateX(-50%) scaleX(1);
+        &:hover:before,
+        &:focus:before {
+            transform: translateX(-50%) scaleX(1);
+        }
     }
 }
 
@@ -143,7 +143,8 @@
     width: 100%;
 }
 
-#main-footer .address a:hover {
+#main-footer .address a:hover,
+#main-footer .address a:focus {
     text-decoration: underline;
 }
 
@@ -168,13 +169,12 @@
 }
 
 #sub-footer a {
-    font-size: 14px;
     color: var(--white);
-}
 
-#sub-footer a:hover,
-#sub-footer a:focus {
-    text-decoration: underline;
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
 }
 
 #sub-footer .menu-footer>ul {
@@ -203,25 +203,24 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-size: 14px;
     color: var(--white);
     cursor: pointer;
-}
 
-.dyslexic-toggle label:hover,
-.dyslexic-toggle label:focus {
-    text-decoration: underline;
-}
+    &:before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        background-color: transparent;
+        border: 2px solid var(--white);
+        border-radius: 50%;
+        transition: background-color ease 250ms;
+    }
 
-.dyslexic-toggle label:before {
-    content: "";
-    width: 14px;
-    height: 14px;
-    display: inline-block;
-    background-color: transparent;
-    border: 2px solid var(--white);
-    border-radius: 50%;
-    transition: background-color ease 250ms;
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
 }
 
 .dyslexic-toggle input:checked+label:before {

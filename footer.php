@@ -19,23 +19,9 @@
                     </div>
                 <?php endif; ?>
 
-                <?php if (get_field('footer_primary_cta_text', 'options') || get_field('footer_primary_cta_image', 'options')['image']) : ?>
+                <?php if (get_field('footer_primary_cta_text', 'options') || get_field('footer_primary_cta_image', 'options')) : ?>
                     <div class="btn-wrapper">
-                        <?php if (get_field('footer_primary_cta_type', 'options') === 'text' && get_field('footer_primary_cta_text', 'options')['title']) : ?>
-                            <a class="btn btn-<?= esc_attr(get_field('footer_primary_cta_color', 'options')); ?> btn-icon-<?= esc_attr(get_field("footer_primary_cta_text_icon", "options")); ?>"
-                                href="<?= esc_url(get_field('footer_primary_cta_text', 'options')['url']); ?>">
-                                <?= esc_html(get_field('footer_primary_cta_text', 'options')['title']); ?>
-                            </a>
-                        <?php elseif (get_field('footer_primary_cta_type', 'options') === 'image' && get_field('footer_primary_cta_image', 'options')['image']) : ?>
-                            <a class="btn btn-<?= esc_attr(get_field('footer_primary_cta_color', 'options')); ?> btn-image"
-                                href="<?= esc_url(get_field('footer_primary_cta_image', 'options')['url']); ?>"
-                                title="<?= esc_attr(get_field('footer_primary_cta_image', 'options')['title']); ?>"
-                                aria-label="<?= esc_attr(get_field('footer_primary_cta_image', 'options')['title']); ?>"
-                                target="<?= esc_attr(get_field('footer_primary_cta_image', 'options')['target']); ?>">
-                                <img src="<?= esc_url(get_field('footer_primary_cta_image', 'options')['image']); ?>"
-                                    alt="<?= esc_attr(get_field('footer_primary_cta_image', 'options')['title']); ?>" />
-                            </a>
-                        <?php endif; ?>
+                        <?php render_cta('footer_primary', 'options'); ?>
                     </div>
                 <?php endif; ?>
 
@@ -79,11 +65,11 @@
                     <?php wp_nav_menu(array('theme_location' => 'footer-submenu', 'container' => false, 'depth' => 1)); ?>
                 </div>
             <?php endif; ?>
-            <?php if (get_field('footer_open_dyslexic', 'option')) : ?>
+            <?php if (get_field('footer_open_dyslexic', 'options')) : ?>
                 <!-- OpenDyslexic Toggle -->
                 <div class="dyslexic-toggle">
                     <input type="checkbox" id="open-dyslexic" name="open-dyslexic" class="screen-reader-only" />
-                    <label for="open-dyslexic"><?= get_field('footer_open_dyslexic_label', 'option') ?: __('Enable OpenDyslexic', 'usefool'); ?></label>
+                    <label for="open-dyslexic"><?= get_field('footer_open_dyslexic_label', 'options') ?: __('Activer OpenDyslexic', 'haut-la-main'); ?></label>
                 </div>
             <?php endif; ?>
         </div>

@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_67f679b160a17",
-            "label": "Bouton #1",
+            "label": "Bouton n°1",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -22,7 +22,7 @@
         },
         {
             "key": "field_66ec349a2febc",
-            "label": "Bouton #1",
+            "label": "Bouton",
             "name": "header_primary",
             "aria-label": "",
             "type": "clone",
@@ -37,7 +37,7 @@
             "clone": [
                 "group_67f67834a0f5b"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 1
@@ -61,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744207445
+    "modified": 1744882629
 }

@@ -27,14 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // General - Enable OpenDyslexic toggle
     function enableDyslexicMode() {
-        document.querySelector(':root').style.setProperty('--bold', "OpenDyslexic, sans-serif");
-        document.querySelector(':root').style.setProperty('--body', "OpenDyslexic, sans-serif");
+        document.querySelector(":root").style.setProperty("--bold", "OpenDyslexic, sans-serif");
+        document.querySelector(":root").style.setProperty("--body", "OpenDyslexic, sans-serif");
         sessionStorage.setItem("dyslexicMode", true);
         console.log("OpenDyslexic is enabled");
     }
     function disableDyslexicMode() {
-        document.querySelector(':root').style.setProperty('--bold', "Josefin Sans, sans-serif");
-        document.querySelector(':root').style.setProperty('--body', "Open Sans, sans-serif");
+        document.querySelector(":root").style.setProperty("--bold", "Josefin Sans, sans-serif");
+        document.querySelector(":root").style.setProperty("--body", "Open Sans, sans-serif");
         sessionStorage.setItem("dyslexicMode", false);
         console.log("OpenDyslexic is disabled");
     }
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         disableDyslexicMode();
         document.getElementById("open-dyslexic").checked = false;
     };
-    document.getElementById("open-dyslexic").addEventListener('change', function () {
+    document.getElementById("open-dyslexic").addEventListener("change", function () {
         if (this.checked) {
             enableDyslexicMode();
         } else {
@@ -170,16 +170,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (window.innerWidth < 1200) {
-        document.querySelectorAll('.menu-item-has-children').forEach(item => {
+        document.querySelectorAll(".menu-item-has-children").forEach(item => {
             item.querySelector(".sub-menu").setAttribute("aria-hidden", "true");
             item.querySelector(".sub-menu").setAttribute("aria-expanded", "false");
 
-            item.addEventListener('click', (event) => {
-                document.querySelector('.menu-item-has-children.active') && document.querySelector('.menu-item-has-children.active').classList.remove('active');
-                document.querySelector('.menu-item-has-children.active') && document.querySelector('.menu-item-has-children.active').setAttribute("aria-hidden", "true");
-                document.querySelector('.menu-item-has-children.active') && document.querySelector('.menu-item-has-children.active').setAttribute("aria-expanded", "false");
+            item.addEventListener("click", (event) => {
+                document.querySelector(".menu-item-has-children.active") && document.querySelector(".menu-item-has-children.active").classList.remove("active");
+                document.querySelector(".menu-item-has-children.active") && document.querySelector(".menu-item-has-children.active").setAttribute("aria-hidden", "true");
+                document.querySelector(".menu-item-has-children.active") && document.querySelector(".menu-item-has-children.active").setAttribute("aria-expanded", "false");
 
-                item.classList.add('active');
+                item.classList.add("active");
                 item.querySelector(".sub-menu").setAttribute("aria-hidden", "false");
                 item.querySelector(".sub-menu").setAttribute("aria-expanded", "true");
                 skipStep = false;

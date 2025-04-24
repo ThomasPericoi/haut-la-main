@@ -3,7 +3,7 @@
 .formatted {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--content-spacing);
 }
 
 /* List */
@@ -23,19 +23,19 @@
     position: relative;
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
+    gap: var(--content-spacing);
     text-indent: 0;
     color: var(--content-color);
-}
 
-.formatted ol>li {
-    counter-increment: item;
-}
+    &:before {
+        margin-top: 0.6em;
+        margin-left: 0.6em;
+    }
 
-.formatted ul>li:before,
-.formatted ol>li:before {
-    margin-top: 0.5em;
-    margin-left: 0.5rem;
+    ul,
+    ol {
+        margin-top: 0.65em;
+    }
 }
 
 .formatted ul>li:before {
@@ -44,108 +44,110 @@
     border-radius: 50%;
 }
 
-.formatted ol>li:before {
-    content: counter(item);
-    color: var(--accent-content-color);
-    font-weight: 700;
-    transform: translateY(-70%);
-}
+.formatted ol>li {
+    counter-increment: item;
 
-.formatted ul ul,
-.formatted ol ol {
-    margin-top: 0.65em;
+    &:before {
+        content: counter(item);
+        color: var(--accent-content-color);
+        font-weight: 700;
+        transform: translateY(-70%);
+    }
 }
 
 /* Image */
-.formatted .wp-block-image img {
+.formatted figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius) 5px;
+}
+
+.formatted figure img + figcaption,
+.wp-block-image .wp-element-caption {
+    margin-top: 0.5em;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.wp-block-image img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: var(--border-radius);
-}
 
-.formatted .wp-block-image img.no-width {
-    width: unset;
-}
-
-.formatted .wp-block-image .wp-element-caption {
-    margin-top: 5px;
-    font-size: 14px;
-    font-style: italic;
-    color: var(--accent-content-color);
+    &.no-width {
+        width: unset;
+    }
 }
 
 /* Quote */
 .wp-block-quote {
     position: relative;
-    padding: 1rem 1rem 1rem 2rem;
+    padding: 1em 1em 1em 2em;
     border-left: 5px solid var(--accent-content-color);
-}
 
-.wp-block-quote>*:not(:nth-last-child(1)) {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
+    &:before {
+        content: "\201C";
+        min-height: 40px;
+        display: block;
+        font-size: 4em;
+        font-family: var(--bold);
+        color: var(--accent-content-color);
+        line-height: 1em;
+    }
 
-.wp-block-quote:before {
-    content: "\201C";
-    height: 40px;
-    display: block;
-    font-size: 4em;
-    font-family: var(--bold);
-    color: var(--accent-content-color);
-    line-height: 1em;
-}
+    &>*:not(:nth-last-child(1)) {
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
 
-.wp-block-quote cite {
-    display: block;
-    text-align: right;
-    font-family: var(--bold);
-    font-weight: 700;
+    cite {
+        display: block;
+        text-align: right;
+        font-family: var(--bold);
+        font-weight: 700;
+    }
 }
 
 /* Tables */
-.wp-block-table.is-style-stripes {
-    border-spacing: 0;
-    border-collapse: inherit;
-    background-color: transparent;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.wp-block-table {
+.wp-block-table .wp-block-table {
     overflow-x: auto;
-}
 
-.wp-block-table table {
-    border-collapse: collapse;
-    width: 100%;
-}
+    &.is-style-stripes {
+        border-spacing: 0;
+        border-collapse: inherit;
+        background-color: transparent;
+        border-bottom: 1px solid #f0f0f0;
 
-.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-    background-color: #f0f0f0;
-}
+        td,
+        th {
+            border-color: transparent;
+        }
 
-.wp-block-table.is-style-stripes td,
-.wp-block-table.is-style-stripes th {
-    border-color: transparent;
-}
+        tbody tr:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+    }
 
-.wp-block-table th {
-    background-color: var(--accent-content-color);
-    font-weight: bold;
-}
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-.wp-block-table td,
-.wp-block-table th {
-    border: 1px solid;
-    padding: 0.5em;
-    vertical-align: middle;
+    td,
+    th {
+        border: 1px solid;
+        padding: 0.5em;
+        vertical-align: middle;
+    }
+
+    th {
+        background-color: var(--accent-content-color);
+        font-weight: bold;
+    }
 }
 
 .has-text-align-center {
     text-align: center;
-}
-
-.formatted .alignnone {
-    margin: 0;
 }

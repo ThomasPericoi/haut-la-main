@@ -21,19 +21,6 @@ if (class_exists('ACF')) {
     }
 }
 
-// Add ACF icon to menu item
-function add_acf_icon_menu($items, $args)
-{
-    foreach ($items as &$item) {
-        $icon = get_field('icon', $item);
-        if ($icon) {
-            $item->title .= ' <img class="icon" src="' . $icon["url"] . '" alt="' . $icon["title"] . '" />';
-        }
-    }
-    return $items;
-}
-add_filter('wp_nav_menu_objects', 'add_acf_icon_menu', 10, 2);
-
 // Remove conflicts between footnotes and ACF
 add_action('init', function () {
     remove_action('init', 'register_block_core_footnotes');
