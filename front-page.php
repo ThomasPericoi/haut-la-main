@@ -54,4 +54,9 @@ $portrait_styles_attr = implode('; ', $portrait_styles);
     </div>
 </section>
 
+<?php get_template_part('template-parts/latest', 'posts', array(
+    'amount' => 2,
+    'title' => __('Mes derniers articles et publications', 'haut-la-main'),
+)); ?>
+
 <?php get_footer(); ?>

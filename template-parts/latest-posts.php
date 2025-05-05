@@ -2,13 +2,14 @@
 <?php $latest = get_posts(array(
     'numberposts' => wp_is_mobile() ? 2 : $args['amount'],
     'post_type' => 'post',
+    'post__not_in' => array($post->ID)
 )); ?>
 
 <?php if ($latest) : ?>
     <section id="latest-posts-<?= uniqid(); ?>" class="latest-posts">
         <div class="container">
             <h2><?= $args['title']; ?></h2>
-            <div class="posts-grid grid-<?= $args['amount']; ?>">
+            <div class="posts-grid grid-<?= $args['amount']; ?> posts">
                 <?php foreach ($latest as $post) :
                     setup_postdata($post); ?>
 

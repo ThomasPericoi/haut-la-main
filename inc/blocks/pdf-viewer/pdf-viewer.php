@@ -28,7 +28,7 @@ $styles_attr  = implode('; ', $styles);
 <!-- Block - PDF Viewer -->
 <section class="<?= esc_attr($classes_attr); ?>" style="<?= esc_attr($styles_attr); ?>">
     <?php if ($file) : ?>
-        <iframe src="<?= get_template_directory_uri(); ?>/assets/js/pdfjs/web/viewer.html" width="100%" height="<?= $height; ?>"></iframe>
+        <iframe src="<?= get_template_directory_uri(); ?>/assets/js/pdfjs/web/viewer.html?file=<?= urlencode($file); ?>" width="100%" height="<?= $height; ?>"></iframe>
         <a href="<?= esc_url($file); ?>" class="btn btn-primary btn-icon-download" target="_blank" rel="noopener noreferrer">
             <?= __('Télécharger le PDF', 'haut-la-main'); ?>
         </a>

@@ -30,6 +30,7 @@
     color: var(--white);
     background-color: var(--content-color);
     border-radius: var(--border-radius) 5px;
+    border: 0;
     transition: background-color ease 250ms, color ease 250ms, border-radius ease 150ms;
     cursor: pointer;
 
@@ -101,6 +102,10 @@
         transform: translateX(0);
         transition: transform ease 250ms;
         filter: brightness(0) invert(1);
+    }
+
+    &.btn-white::after {
+        filter: var(--content-color-filter);
     }
 }
 

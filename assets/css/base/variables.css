@@ -14,11 +14,12 @@
 
   --secondary-light: var(--linen);
 
-  --primary-filter: brightness(0) saturate(100%) invert(59%) sepia(22%) saturate(6092%) hue-rotate(319deg) brightness(105%) contrast(104%);
-  --secondary-filter: brightness(0) saturate(100%) invert(95%) sepia(96%) saturate(4144%) hue-rotate(293deg) brightness(100%) contrast(91%);
-
   --content-color: var(--mine-shaft);
   --accent-content-color: var(--primary);
+
+  --primary-filter: brightness(0) saturate(100%) invert(59%) sepia(22%) saturate(6092%) hue-rotate(319deg) brightness(105%) contrast(104%);
+  --secondary-filter: brightness(0) saturate(100%) invert(95%) sepia(96%) saturate(4144%) hue-rotate(293deg) brightness(100%) contrast(91%);
+  --content-color-filter: brightness(0) saturate(100%) invert(16%) sepia(0%) saturate(1362%) hue-rotate(184deg) brightness(100%) contrast(87%);
 
   /* Fonts */
   --bold: "Josefin Sans", sans-serif;
@@ -30,6 +31,7 @@
   /* Spacings */
   --spacing-section-inner: 2rem;
   --spacing-section-outer: 4rem;
+  
   --content-spacing: 1.2rem;
   --spacing-title: 1em;
 }

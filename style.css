@@ -55,7 +55,8 @@ Text Domain: haut-la-main
 /* #Templates
 --------------------------------------------------------------- */
 
-
+@import "./assets/css/templates/contact.css";
+@import "./assets/css/templates/faq.css";
 
 /* #Pages
 --------------------------------------------------------------- */

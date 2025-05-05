@@ -134,6 +134,20 @@ remove_action('wp_head', 'wlwmanifest_link');
 // Remove Wordpress admin bar
 // add_filter('show_admin_bar', '__return_false');
 
+// Add category slug to body classes
+function add_category_slug_to_body($classes)
+{
+    if (is_singular('post')) {
+        global $post;
+        $category = get_the_category($post->ID);
+        if ($category && ! is_wp_error($category)) {
+            $classes[] = $category[0]->slug;
+        }
+    }
+    return $classes;
+}
+add_filter('body_class', 'add_category_slug_to_body');
+
 // Add stylesheets
 function enqueue_theme_stylesheets()
 {

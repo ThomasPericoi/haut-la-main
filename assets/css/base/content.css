@@ -70,17 +70,6 @@
     font-style: italic;
 }
 
-.wp-block-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: var(--border-radius);
-
-    &.no-width {
-        width: unset;
-    }
-}
-
 /* Quote */
 .wp-block-quote {
     position: relative;

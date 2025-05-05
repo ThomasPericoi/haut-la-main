@@ -4,3 +4,16 @@
 .hero-simple {
     text-align: center;
 }
+
+.hero-simple .category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-simple .category svg {
+    max-width: 20px;
+    max-height: 20px;
+    display: block;
+    filter: var(--content-color-filter);
+}

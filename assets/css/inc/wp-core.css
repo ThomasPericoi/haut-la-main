@@ -1,5 +1,15 @@
 /* #WordPress Core
 -------------------------------------------------------------- */
+.wp-block-image figure {
+    width: fit-content;
+}
+
+.wp-block-image figure img {
+    width: unset;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 .alignnone {
     margin: 5px 20px 20px 0;
